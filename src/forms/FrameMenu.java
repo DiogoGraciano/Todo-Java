@@ -4,6 +4,8 @@
  */
 package forms;
 
+import abstratas.DadosTarefa;
+
 /**
  *
  * @author professor01
@@ -95,6 +97,7 @@ public class FrameMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                DadosTarefa.startData();
                 new FrameMenu().setVisible(true);
             }
         });

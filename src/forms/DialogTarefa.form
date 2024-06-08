@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+<Form version="1.6" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
@@ -27,83 +27,142 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="textNomeTarefa" alignment="0" min="-2" pref="371" max="-2" attributes="0"/>
-                          <Component id="labelNomeTarefa" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ComboStatusTarefa" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
-                          <Component id="labelStatusTarefa" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="labelPrioridadeTarefa" min="-2" max="-2" attributes="0"/>
-                          <Component id="spinnerPrioridadeTarefa" min="-2" pref="115" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="labelDataIniTarefa" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="labelDataFinalTarefa" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="textDataInicioTarefa" min="-2" pref="101" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="textDataFinalizacaoTarefa" min="-2" pref="113" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="btnInserirTarefa" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="553" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="labelDescricaoTarefa" min="-2" max="-2" attributes="0"/>
-                  <Component id="scrollTableTarefa" alignment="0" max="32767" attributes="0"/>
-                  <Component id="scrollTextAreaTarefa" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="scrollTableTarefa" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labelDescricaoTarefa" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="labelNomeTarefa2" min="-2" pref="64" max="-2" attributes="0"/>
+                                          <Component id="spinnerIdTarefa2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="labelNomeTarefa1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="textNomeTarefa2" min="-2" pref="306" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="labelPrioridadeTarefa1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="spinnerPrioridadeTarefa2" min="-2" pref="115" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="BtnPesquisarTarefa" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="BtnMostrarTodosTarefa" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="scrollTextAreaTarefa" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                                  <Component id="labelNomeTarefa3" min="-2" pref="64" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="spinnerIdTarefa" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="textNomeTarefa" min="-2" pref="300" max="-2" attributes="0"/>
+                                              <Component id="labelNomeTarefa" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labelStatusTarefa" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ComboStatusTarefa" min="-2" pref="115" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labelPrioridadeTarefa" min="-2" max="-2" attributes="0"/>
+                                              <Component id="spinnerPrioridadeTarefa" min="-2" pref="115" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="labelNomeTarefa" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="textNomeTarefa" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="textNomeTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ComboStatusTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="spinnerIdTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="labelStatusTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="labelPrioridadeTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelNomeTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="ComboStatusTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="spinnerPrioridadeTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="textDataInicioTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="textDataFinalizacaoTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="spinnerPrioridadeTarefa" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="labelDataIniTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="labelDataFinalTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="labelNomeTarefa3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Component id="labelDescricaoTarefa" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="scrollTextAreaTarefa" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnInserirTarefa" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labelNomeTarefa1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labelNomeTarefa2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="textNomeTarefa2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="spinnerIdTarefa2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="labelPrioridadeTarefa1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                      <Component id="spinnerPrioridadeTarefa2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="scrollTableTarefa" min="-2" pref="207" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BtnPesquisarTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BtnMostrarTodosTarefa" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -120,9 +179,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="textNomeTarefa">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelDescricaoTarefa">
       <Properties>
@@ -144,16 +200,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JComboBox" name="ComboStatusTarefa">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new TipoConta" type="code"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
     <Container class="javax.swing.JScrollPane" name="scrollTableTarefa">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -164,15 +210,16 @@
         <Component class="javax.swing.JTable" name="tableTarefa">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="7" rowCount="10">
+              <Table columnCount="5" rowCount="10">
                 <Column editable="true" title="ID" type="java.lang.Integer"/>
                 <Column editable="true" title="Nome" type="java.lang.String"/>
-                <Column editable="true" title="Descric&#xe3;o" type="java.lang.Long"/>
+                <Column editable="true" title="Descric&#xe3;o" type="java.lang.String"/>
                 <Column editable="true" title="Status" type="java.lang.String"/>
                 <Column editable="true" title="Prioridade" type="java.lang.Integer"/>
-                <Column editable="true" title="Data de Inicio" type="java.lang.String"/>
-                <Column editable="true" title="Data de Finaliza&#xe7;&#xe3;o" type="java.lang.String"/>
               </Table>
+            </Property>
+            <Property name="selectionModel" type="javax.swing.ListSelectionModel" editor="org.netbeans.modules.form.editors2.JTableSelectionModelEditor">
+              <JTableSelectionModel selectionMode="0"/>
             </Property>
           </Properties>
         </Component>
@@ -183,16 +230,6 @@
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="labelDataIniTarefa">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Data de Inicio"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="labelDataFinalTarefa">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Data de Finaliza&#xe7;&#xe3;o"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JSpinner" name="spinnerPrioridadeTarefa">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
@@ -200,22 +237,94 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="textDataFinalizacaoTarefa">
+    <Component class="javax.swing.JLabel" name="labelNomeTarefa1">
       <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="d/m/yy" subtype="-1" type="1"/>
+        <Property name="text" type="java.lang.String" value="Nome Tarefa"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="textNomeTarefa2">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="1"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="Pesquisar"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Inserir Tarefa"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelPrioridadeTarefa1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Prioridade"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnInserirTarefa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Inserir"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textDataFinalizacaoTarefaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInserirTarefaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JFormattedTextField" name="textDataInicioTarefa">
+    <Component class="javax.swing.JLabel" name="labelNomeTarefa2">
       <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
-          <Format format="d/m/yy" subtype="-1" type="1"/>
+        <Property name="text" type="java.lang.String" value="ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnPesquisarTarefa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Pesquisar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnPesquisarTarefaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="ComboStatusTarefa">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;TarefaStatus&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labelNomeTarefa3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="spinnerIdTarefa">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+        </Property>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="spinnerIdTarefa2">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="0.0" minimum="0.0" numberType="java.lang.Double" stepSize="1.0" type="number"/>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="spinnerPrioridadeTarefa2">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="0.0" minimum="0.0" numberType="java.lang.Double" stepSize="1.0" type="number"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BtnMostrarTodosTarefa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mostrar Todos"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnMostrarTodosTarefaActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

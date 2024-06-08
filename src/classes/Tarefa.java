@@ -2,65 +2,57 @@
 package classes;
 
 import enums.TarefaStatus;
-import abstratas.Dados;
+import abstratas.DadosTarefa;
 
-public class Tarefa extends Dados{
+public class Tarefa extends DadosTarefa{
     //atributos
     private int id;
     private int prioridade;
     private String nome;
     private String descricao;
-    private String status;
-    private String dataIni;
-    private String dataFim;
+    private TarefaStatus status;
 
     //métodos
     public Tarefa() {
         this.setId(0);
+        this.setPrioridade(1);
         this.setNome("");
+        this.setDescricao("");
         this.setStatus(TarefaStatus.CRIADO);
-        this.setDataIni("");
-        this.setDataFim("");
-    }
-
-    public Tarefa(int id, String nome, TarefaStatus status, String dataIni,String dataFim) {
-        this.setId(id);
-        this.setNome(nome);
-        this.setStatus(status);
-        this.setDataIni(dataIni);
-        this.setDataFim(dataFim);
     }
     //set
     public void setId(int id) {
         this.id = id < 1 ? 1 : id;
     }
+    public void setPrioridade(int prioridade) {
+        this.prioridade = prioridade < 1 ? 1 : prioridade;
+    }
     public void setNome(String nome) {
         this.nome = nome.trim().isEmpty() ? "SEM VALOR": nome.toUpperCase();
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao.trim().isEmpty() ? "SEM VALOR": descricao.toUpperCase();
     }
     public void setStatus(TarefaStatus status) {
         this.status = status;
     }
-    public void setDataIni(String data) {
-        this.dataIni = data;
-    }
-    public void setDataFim(String data) {
-        this.dataFim = data;
-    }
     //get
-    public int getId(int id) {
+    public int getId() {
         return this.id;
+    }
+    public int getPrioridade() {
+        return this.prioridade;
     }
     public String getNome() {
         return this.nome;
     }
+    public String getDescricao() {
+        return this.descricao;
+    }
     public TarefaStatus getStatus() {
         return this.status;
     }
-    public String getDataIni() {
-        return this.dataIni;
+    public void store(){
+        this.addData(this);
     }
-    public String getDataFim() {
-        return this.dataFim;
-    }
-    
 }

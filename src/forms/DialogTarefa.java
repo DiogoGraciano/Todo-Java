@@ -4,7 +4,10 @@
  */
 package forms;
 
-import abstratas.Dados;
+import abstratas.DadosTarefa;
+import classes.Tarefa;
+import enums.TarefaStatus;
+import javax.swing.JSpinner;
 
 /**
  *
@@ -35,15 +38,24 @@ public class DialogTarefa extends javax.swing.JDialog {
         labelDescricaoTarefa = new javax.swing.JLabel();
         scrollTextAreaTarefa = new javax.swing.JScrollPane();
         textAreaDescricaoTarefa = new javax.swing.JTextArea();
-        ComboStatusTarefa = new javax.swing.JComboBox<>();
         scrollTableTarefa = new javax.swing.JScrollPane();
         tableTarefa = new javax.swing.JTable();
         labelPrioridadeTarefa = new javax.swing.JLabel();
-        labelDataIniTarefa = new javax.swing.JLabel();
-        labelDataFinalTarefa = new javax.swing.JLabel();
         spinnerPrioridadeTarefa = new javax.swing.JSpinner();
-        textDataFinalizacaoTarefa = new javax.swing.JFormattedTextField();
-        textDataInicioTarefa = new javax.swing.JFormattedTextField();
+        labelNomeTarefa1 = new javax.swing.JLabel();
+        textNomeTarefa2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        labelPrioridadeTarefa1 = new javax.swing.JLabel();
+        btnInserirTarefa = new javax.swing.JButton();
+        labelNomeTarefa2 = new javax.swing.JLabel();
+        BtnPesquisarTarefa = new javax.swing.JButton();
+        ComboStatusTarefa = new javax.swing.JComboBox<>();
+        labelNomeTarefa3 = new javax.swing.JLabel();
+        spinnerIdTarefa = new javax.swing.JSpinner();
+        spinnerIdTarefa2 = new javax.swing.JSpinner();
+        spinnerPrioridadeTarefa2 = new javax.swing.JSpinner();
+        BtnMostrarTodosTarefa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -56,59 +68,85 @@ public class DialogTarefa extends javax.swing.JDialog {
 
         labelStatusTarefa.setText("Status");
 
-        textNomeTarefa.setEditable(false);
-
         labelDescricaoTarefa.setText("Descrição");
 
         textAreaDescricaoTarefa.setColumns(20);
         textAreaDescricaoTarefa.setRows(5);
         scrollTextAreaTarefa.setViewportView(textAreaDescricaoTarefa);
 
-        ComboStatusTarefa.setModel(new TipoConta);
-
         tableTarefa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Descricão", "Status", "Prioridade", "Data de Inicio", "Data de Finalização"
+                "ID", "Nome", "Descricão", "Status", "Prioridade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+        tableTarefa.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         scrollTableTarefa.setViewportView(tableTarefa);
 
         labelPrioridadeTarefa.setText("Prioridade");
 
-        labelDataIniTarefa.setText("Data de Inicio");
-
-        labelDataFinalTarefa.setText("Data de Finalização");
-
         spinnerPrioridadeTarefa.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
 
-        textDataFinalizacaoTarefa.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/m/yy"))));
-        textDataFinalizacaoTarefa.addActionListener(new java.awt.event.ActionListener() {
+        labelNomeTarefa1.setText("Nome Tarefa");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Pesquisar");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setText("Inserir Tarefa");
+
+        labelPrioridadeTarefa1.setText("Prioridade");
+
+        btnInserirTarefa.setText("Inserir");
+        btnInserirTarefa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textDataFinalizacaoTarefaActionPerformed(evt);
+                btnInserirTarefaActionPerformed(evt);
             }
         });
 
-        textDataInicioTarefa.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/m/yy"))));
+        labelNomeTarefa2.setText("ID");
+
+        BtnPesquisarTarefa.setText("Pesquisar");
+        BtnPesquisarTarefa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPesquisarTarefaActionPerformed(evt);
+            }
+        });
+
+        labelNomeTarefa3.setText("ID");
+
+        spinnerIdTarefa.setModel(new javax.swing.SpinnerNumberModel());
+        spinnerIdTarefa.setEnabled(false);
+
+        spinnerIdTarefa2.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
+
+        spinnerPrioridadeTarefa2.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
+
+        BtnMostrarTodosTarefa.setText("Mostrar Todos");
+        BtnMostrarTodosTarefa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMostrarTodosTarefaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,65 +154,108 @@ public class DialogTarefa extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textNomeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelNomeTarefa))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ComboStatusTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelStatusTarefa))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelPrioridadeTarefa)
-                            .addComponent(spinnerPrioridadeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnInserirTarefa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(553, 553, 553))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(scrollTableTarefa, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelDataIniTarefa)
-                                .addGap(38, 38, 38)
-                                .addComponent(labelDataFinalTarefa))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(textDataInicioTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textDataFinalizacaoTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(labelDescricaoTarefa)
-                    .addComponent(scrollTableTarefa)
-                    .addComponent(scrollTextAreaTarefa))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelDescricaoTarefa)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelNomeTarefa2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(spinnerIdTarefa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelNomeTarefa1)
+                                            .addComponent(textNomeTarefa2, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelPrioridadeTarefa1)
+                                            .addComponent(spinnerPrioridadeTarefa2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(BtnPesquisarTarefa)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(BtnMostrarTodosTarefa))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(scrollTextAreaTarefa, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(1, 1, 1)
+                                                    .addComponent(labelNomeTarefa3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(spinnerIdTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(textNomeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(labelNomeTarefa))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(labelStatusTarefa)
+                                                .addComponent(ComboStatusTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(labelPrioridadeTarefa)
+                                                .addComponent(spinnerPrioridadeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(5, 5, 5)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelNomeTarefa)
-                        .addGap(5, 5, 5)
-                        .addComponent(textNomeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textNomeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ComboStatusTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(spinnerIdTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelStatusTarefa)
-                            .addComponent(labelPrioridadeTarefa))
+                            .addComponent(labelPrioridadeTarefa)
+                            .addComponent(labelNomeTarefa))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ComboStatusTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(spinnerPrioridadeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textDataInicioTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textDataFinalizacaoTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(spinnerPrioridadeTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelDataIniTarefa)
-                            .addComponent(labelDataFinalTarefa))
+                        .addComponent(labelNomeTarefa3)
                         .addGap(28, 28, 28)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelDescricaoTarefa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrollTextAreaTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnInserirTarefa)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelNomeTarefa1)
+                                .addComponent(labelNomeTarefa2))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(textNomeTarefa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(spinnerIdTarefa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(labelPrioridadeTarefa1)
+                            .addGap(28, 28, 28)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(spinnerPrioridadeTarefa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(scrollTableTarefa, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnPesquisarTarefa)
+                    .addComponent(BtnMostrarTodosTarefa))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,13 +263,114 @@ public class DialogTarefa extends javax.swing.JDialog {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        textNomeTarefa.setText(Dados.getNumero()+"");
-        spinnerPrioridadeTarefa.setValue(Dados.getTaxa());
+        spinnerIdTarefa.setValue(DadosTarefa.getLastId());
+        spinnerPrioridadeTarefa.setValue(1);
+        spinnerPrioridadeTarefa2.setValue(1);
+        
+        for (TarefaStatus status : TarefaStatus.values()) {
+            ComboStatusTarefa.addItem(status);
+        }
+       
+        this.setModelTable(0,"",0);
     }//GEN-LAST:event_formWindowOpened
 
-    private void textDataFinalizacaoTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDataFinalizacaoTarefaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textDataFinalizacaoTarefaActionPerformed
+    private void btnInserirTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirTarefaActionPerformed
+        Tarefa tarefa = new Tarefa();
+      
+        tarefa.setId((int) spinnerIdTarefa.getValue());
+        tarefa.setNome(textNomeTarefa.getText());
+        tarefa.setDescricao(textAreaDescricaoTarefa.getText());
+        tarefa.setPrioridade((int) spinnerPrioridadeTarefa.getValue());
+        tarefa.setStatus((TarefaStatus) ComboStatusTarefa.getSelectedItem());
+        tarefa.store();
+        
+        spinnerIdTarefa.setValue(DadosTarefa.getLastId());
+        
+        spinnerIdTarefa2.setValue(tarefa.getId());
+        
+        tableTarefa.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {tarefa.getId(), tarefa.getNome(), tarefa.getDescricao(), tarefa.getStatus(), tarefa.getPrioridade()},
+            },
+            new String [] {
+                "ID", "Nome", "Descricão", "Status", "Prioridade"
+            }
+        ){
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+    }//GEN-LAST:event_btnInserirTarefaActionPerformed
+
+    private void setModelTable(int id,String nome,int Prioridade){
+        Object[][] dados = new Object[DadosTarefa.getAllData().size()][];
+        
+        int i = 0;
+        for (Tarefa tarefa : DadosTarefa.getAllData()){
+            if(id > 0 && tarefa.getId() != id){
+                continue;
+            }
+            if(!nome.isBlank() && !tarefa.getNome().contains(nome.toUpperCase())){
+                continue;
+            }
+            if(Prioridade != 0 && tarefa.getPrioridade() != Prioridade){
+                continue;
+            }
+         
+            dados[i] = new Object[]{
+                tarefa.getId(), 
+                tarefa.getNome(), 
+                tarefa.getDescricao(), 
+                tarefa.getStatus(), 
+                tarefa.getPrioridade()
+            };
+            i++;
+        }
+        
+        tableTarefa.setModel(new javax.swing.table.DefaultTableModel(
+            dados,
+            new String [] {
+                 "ID", "Nome", "Descricão", "Status", "Prioridade"
+            }
+        ){
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, TarefaStatus.class, java.lang.Integer.class
+            };
+
+            @Override
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });     
+    }
+    
+    private void BtnPesquisarTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPesquisarTarefaActionPerformed
+     
+        int id = this.getSpinnerIntValue(spinnerIdTarefa2);
+        String nome = textNomeTarefa2.getText();
+        int prioridade = this.getSpinnerIntValue(spinnerPrioridadeTarefa2);
+        
+        this.setModelTable(id,nome,prioridade);
+    }//GEN-LAST:event_BtnPesquisarTarefaActionPerformed
+    
+    private int getSpinnerIntValue(JSpinner spinner) {
+        Object value = spinner.getValue();
+        if (value instanceof Number) {
+            return ((Number) value).intValue();
+        } else {
+            // Handle unexpected value type if necessary
+            throw new IllegalArgumentException("Spinner value is not a number");
+        }
+    }
+    
+    private void BtnMostrarTodosTarefaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMostrarTodosTarefaActionPerformed
+        this.setModelTable(0,"",0);
+    }//GEN-LAST:event_BtnMostrarTodosTarefaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,20 +418,29 @@ public class DialogTarefa extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ComboStatusTarefa;
-    private javax.swing.JLabel labelDataFinalTarefa;
-    private javax.swing.JLabel labelDataIniTarefa;
+    private javax.swing.JButton BtnMostrarTodosTarefa;
+    private javax.swing.JButton BtnPesquisarTarefa;
+    private javax.swing.JComboBox<TarefaStatus> ComboStatusTarefa;
+    private javax.swing.JButton btnInserirTarefa;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelDescricaoTarefa;
     private javax.swing.JLabel labelNomeTarefa;
+    private javax.swing.JLabel labelNomeTarefa1;
+    private javax.swing.JLabel labelNomeTarefa2;
+    private javax.swing.JLabel labelNomeTarefa3;
     private javax.swing.JLabel labelPrioridadeTarefa;
+    private javax.swing.JLabel labelPrioridadeTarefa1;
     private javax.swing.JLabel labelStatusTarefa;
     private javax.swing.JScrollPane scrollTableTarefa;
     private javax.swing.JScrollPane scrollTextAreaTarefa;
+    private javax.swing.JSpinner spinnerIdTarefa;
+    private javax.swing.JSpinner spinnerIdTarefa2;
     private javax.swing.JSpinner spinnerPrioridadeTarefa;
+    private javax.swing.JSpinner spinnerPrioridadeTarefa2;
     private javax.swing.JTable tableTarefa;
     private javax.swing.JTextArea textAreaDescricaoTarefa;
-    private javax.swing.JFormattedTextField textDataFinalizacaoTarefa;
-    private javax.swing.JFormattedTextField textDataInicioTarefa;
     private javax.swing.JTextField textNomeTarefa;
+    private javax.swing.JTextField textNomeTarefa2;
     // End of variables declaration//GEN-END:variables
 }
